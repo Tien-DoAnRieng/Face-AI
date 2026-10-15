@@ -1,28 +1,11 @@
 # Nhận diện khuôn mặt sinh viên
 
 Bước đầu của đồ án AI: đăng ký khuôn mặt, nhận diện ảnh và chạy camera.
-`ai/` chứa phần AI; `backend/` và `frontend/` dành cho các bước tiếp theo.
+`ai/` chứa phần AI. Giao diện frontend được quản lý trong repo riêng.
 Đã có lưu lịch sử vào/ra bằng SQLite, chưa kết nối tự động với camera.
 Chưa triển khai xác định vào/ra, điểm danh, chống giả mạo hay xác nhận qua nhiều khung hình.
 
 ## Lưu lịch sử vào/ra
-
-### Giao diện web
-
-```powershell
-python -m backend.server
-```
-
-Mở **http://127.0.0.1:8000** trong trình duyệt. Ctrl+C để dừng server.
-Nếu cổng đã dùng: `python -m backend.server --port 8001`.
-Không cần cài thêm thư viện. Giao diện gồm lịch sử thật từ SQLite, lọc theo
-mã sinh viên/phòng/hướng, ghi sự kiện thủ công và xuất CSV. Thống kê tính trên
-danh sách hiển thị, truy vấn tối đa 1.000 bản ghi. Thời gian hiển thị giờ Việt Nam.
-Các lệnh CLI bên dưới vẫn dùng cùng database. Bấm Làm mới sau khi ghi bằng CLI.
-Server dùng cho demo tại máy cá nhân, chưa có đăng nhập và không mở ra Internet.
-Frontend nằm trong `frontend/`, API trong `backend/server.py`; chưa tạo repo riêng.
-
-Kiểm tra API: `python -m unittest tests.test_server tests.test_database`.
 
 Không cần cài thư viện thêm, SQLite có sẵn trong Python.
 
